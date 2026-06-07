@@ -3,7 +3,7 @@ name = "mig-governance"
 version = "0.1.0"
 description = "The AI agent firewall. Graph-based content-level governance for any agent framework."
 readme = "README.md"
-license = {text = "Proprietary — Evaluation Use"}
+license = { text = "Business Source License 1.1" }
 requires-python = ">=3.9"
 authors = [
     {name = "Indrooneel Panday", email = "neel@houseofgalatine.com"}
