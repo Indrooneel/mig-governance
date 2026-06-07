@@ -1,0 +1,82 @@
+{
+    "name": "MIG Default Policies",
+    "version": "1.0",
+    "description": "Safe defaults for AI agent governance. Blocks PII exfiltration, unauthorized external access, and dangerous operations.",
+    "policies": [
+        {
+            "id": "DEFAULT-ALLOW-001",
+            "description": "Reading and viewing data is permitted",
+            "action_type": "read_data",
+            "direction": "ALLOW",
+            "keywords": ["read", "view", "get", "fetch", "list", "show", "check", "monitor", "status", "report", "summary", "current", "display", "search", "find", "look up", "retrieve", "query"],
+            "enforcement": "standard"
+        },
+        {
+            "id": "DEFAULT-ALLOW-002",
+            "description": "Sending messages to team members is permitted",
+            "action_type": "send_message",
+            "direction": "ALLOW",
+            "keywords": ["message", "notify", "alert", "team", "slack", "chat", "internal message"],
+            "enforcement": "standard"
+        },
+        {
+            "id": "DEFAULT-DENY-001",
+            "description": "Sending PII or sensitive data to external destinations is blocked",
+            "action_type": "export_data",
+            "direction": "DENY",
+            "keywords": ["salary", "ssn", "credit card", "password", "credentials", "medical", "health", "bank account", "personal data", "passport"],
+            "conditions": {"destination": "external"},
+            "enforcement": "critical"
+        },
+        {
+            "id": "DEFAULT-DENY-002",
+            "description": "Exporting confidential data externally is blocked",
+            "action_type": "share_document",
+            "direction": "DENY",
+            "keywords": ["confidential", "classified", "secret", "internal only", "restricted", "private key", "api key", "access token"],
+            "conditions": {"destination": "external"},
+            "enforcement": "critical"
+        },
+        {
+            "id": "DEFAULT-DENY-003",
+            "description": "Database destructive operations are blocked",
+            "action_type": "access_database",
+            "direction": "DENY",
+            "keywords": ["drop", "delete", "truncate", "destroy", "wipe", "purge"],
+            "enforcement": "critical"
+        },
+        {
+            "id": "DEFAULT-DENY-004",
+            "description": "Executing system commands is blocked",
+            "action_type": "execute_command",
+            "direction": "DENY",
+            "keywords": ["execute", "run", "shell", "bash", "cmd", "sudo", "rm -rf", "format"],
+            "enforcement": "critical"
+        },
+        {
+            "id": "DEFAULT-APPR-001",
+            "description": "Sending emails to external recipients requires approval",
+            "action_type": "send_email",
+            "direction": "APPROVAL",
+            "keywords": ["email", "send", "external", "gmail", "yahoo", "hotmail"],
+            "conditions": {"destination": "external"},
+            "enforcement": "elevated"
+        },
+        {
+            "id": "DEFAULT-APPR-002",
+            "description": "Payments and financial transfers require approval",
+            "action_type": "process_payment",
+            "direction": "APPROVAL",
+            "keywords": ["payment", "transfer", "pay", "wire", "invoice", "disburse"],
+            "enforcement": "elevated"
+        },
+        {
+            "id": "DEFAULT-APPR-003",
+            "description": "Modifying records requires approval",
+            "action_type": "modify_record",
+            "direction": "APPROVAL",
+            "keywords": ["update", "modify", "change", "edit", "alter"],
+            "enforcement": "elevated"
+        }
+    ]
+}

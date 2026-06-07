@@ -1,0 +1,58 @@
+[project]
+name = "mig-governance"
+version = "0.1.0"
+description = "The AI agent firewall. Graph-based content-level governance for any agent framework."
+readme = "README.md"
+license = {text = "Proprietary — Evaluation Use"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Indrooneel Panday", email = "neel@houseofgalatine.com"}
+]
+keywords = [
+    "ai-governance", "agent-security", "llm-guardrails",
+    "execution-control", "ai-firewall", "mig", "knowledge-graph",
+    "zero-trust", "policy-engine", "content-inspection"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "networkx>=3.0",
+    "chromadb>=0.4.0",
+]
+
+[project.optional-dependencies]
+langgraph = ["langgraph>=0.1.0"]
+crewai = ["crewai>=0.1.0"]
+server = ["fastapi>=0.100.0", "uvicorn>=0.22.0"]
+pro = ["requests>=2.28.0"]
+dev = ["pytest>=7.0.0", "pytest-cov>=4.0.0"]
+all = ["fastapi>=0.100.0", "uvicorn>=0.22.0", "requests>=2.28.0"]
+
+[project.scripts]
+mig-governance = "mig_governance.server:main"
+
+[project.urls]
+Homepage = "https://houseofgalatine.com"
+Repository = "https://github.com/Indrooneel/mig-governance"
+Documentation = "https://github.com/Indrooneel/mig-governance#readme"
+Playground = "https://houseofgalatine.com/playground"
+Issues = "https://github.com/Indrooneel/mig-governance/issues"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["mig_governance*"]
+
+[tool.setuptools.package-data]
+mig_governance = ["policies/*.json"]
