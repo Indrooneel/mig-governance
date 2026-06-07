@@ -1,0 +1,47 @@
+# Business Source License 1.1
+
+## Licensor: House of Galatine
+
+## Licensed Work: MIG Governance (The AI Agent Firewall)
+
+## Additional Use Grant: You may use the Licensed Work for development, testing, and evaluation purposes without charge. You may also integrate the Licensed Work into non‑commercial open‑source projects under a compatible license. Any production use, or any use that charges fees or operates as a service that competes with the Licensed Work, requires a separate commercial license from the Licensor.
+
+## Change Date: 2029-06-01
+
+## Change License: Apache License, Version 2.0
+
+## Terms
+
+The Business Source License (this document) applies to the Licensed Work. The terms of the Change License apply to all software and derivative works that are not subject to the Additional Use Grant or any other exceptions explicitly granted by Licensor.
+
+### 1. License Grant
+
+Licensor hereby grants you a non‑exclusive, non‑transferable, worldwide, royalty‑free license to use, reproduce, modify, prepare derivative works of, and distribute the Licensed Work, subject to the terms and conditions of this License and any restrictions contained in the Additional Use Grant.
+
+### 2. Restrictions
+
+(a) Any production deployment, or any use that charges fees or is offered as a service that directly or indirectly competes with the Licensed Work, is not permitted without a separate commercial license from Licensor.
+
+(b) You may not remove or alter any copyright, patent, trademark, or attribution notices appearing in the Licensed Work.
+
+(c) You must include a copy of this License with any distribution of the Licensed Work.
+
+### 3. Change Date
+
+The Change Date is 2029-06-01. On and after the Change Date, this Licensed Work and all its derivative works shall be governed by the Change License (Apache License, Version 2.0), without any further restrictions from this Business Source License.
+
+### 4. Disclaimer of Warranty
+
+THE LICENSED WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+### 5. Limitation of Liability
+
+IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE LICENSED WORK.
+
+### 6. Termination
+
+This License terminates automatically if you fail to comply with its terms. Upon termination, you must cease all use of the Licensed Work and destroy all copies.
+
+---
+
+**For commercial licensing, contact:** neel@houseofgalatine.com
