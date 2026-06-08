@@ -95,6 +95,44 @@ curl -X POST http://localhost:8000/validate \
 | **Decorator** | Framework developers | `@gov.guard` on any function |
 | **Server** | Automation platforms | `mig-governance serve` → HTTP API |
 
+Exposing MIG to the Cloud (ngrok)
+
+MIG runs on your local machine. Cloud automation platforms (Zapier, Make, n8n, Relevance AI) cannot reach `localhost`. To connect them, you need a tunnel. [ngrok](https://ngrok.com) is the simplest solution (free tier works).
+
+**Step 1 – Install ngrok**  
+Download from [ngrok.com/download](https://ngrok.com/download), unzip, and authenticate:
+```bash
+ngrok config add-authtoken YOUR_AUTH_TOKEN   # get your token from the ngrok dashboard after sign‑up
+```
+
+Step 2 – Start MIG server
+In one terminal:
+
+```bash
+mig-governance serve
+```
+
+Step 3 – Expose the server
+In another terminal:
+
+```bash
+ngrok http 8000
+```
+
+You'll see a public URL like https://abc123.ngrok.io. That URL securely forwards to your local MIG server.
+
+Step 4 – Use the public URL in automation tools
+In Zapier, Make, n8n, etc., create an HTTP request:
+
+· Method: POST
+· URL: https://your-ngrok-url/validate
+· Headers: Content-Type: application/json
+· Body: {"text": "The action to validate"}
+
+The response contains decision (ALLOW/DENY/APPROVAL), risk_score, and full audit details.
+
+Note: The free ngrok URL changes each time you restart. For production workloads, consider a static tunnel or deploy MIG on a cloud VM.
+
 ---
 
 ## What MIG catches that others don't
