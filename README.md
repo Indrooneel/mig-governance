@@ -256,6 +256,31 @@ gov = Governor(policies="./my_policies.json")
 | Dashboard | — | ✅ Web UI |
 | Price | Free | Contact us |
 
+
+## Known Limitations
+
+MIG is early and we'd rather you know exactly what it does and doesn't do.
+
+- **In-memory graph (free tier):** policies load from JSON on startup. 
+  Restart the process, the graph rebuilds. Persistent graph state 
+  requires the Pro engine (Neo4j).
+- **Semantic matching is basic:** ChromaDB local embeddings catch 
+  rephrasing, but adversarial prompt obfuscation is not fully covered. 
+  Pair MIG with input validation; don't treat it as your only layer.
+- **English-only keywords:** policy keyword matching assumes English 
+  payloads. Multilingual support is on the roadmap.
+- **Not yet independently audited:** the pipeline is tested 
+  (see test results), but no third-party security audit has been 
+  performed. Don't deploy as the sole control in safety-critical 
+  systems yet.
+- **localhost server has no auth:** `mig-governance serve` is meant 
+  for local/tunneled use. Put it behind auth before exposing publicly.
+  Don't deploy as the sole control in safety-critical systems yet.
+  MIG is designed as one layer in a defense-in-depth strategy.
+
+Found something else? Open an issue — honest bug reports make this better.
+
+
 ```python
 # Free — runs locally
 gov = Governor(policies="./policies.json")
