@@ -1,0 +1,11 @@
+# Contributing
+
+Thanks for your interest in MIG.
+
+**Bug reports and feature requests:** very welcome — open an issue.
+
+**Pull requests:** not accepted at this time. MIG is licensed under 
+BSL 1.1, which requires us to retain full rights over the codebase. 
+We may open PRs with a CLA in the future.
+
+**Security issues:** see SECURITY.md — please report privately.
